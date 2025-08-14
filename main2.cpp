@@ -61,7 +61,7 @@ int main(){
 
     map <int, char> occupiedPositions;
 
-    for(int i=0; i<3; i++){
+    for(int i=0; ; i++){
 
         if(count%2==0) user='O';
         else user='X';  // to print in console whose turn is it
@@ -82,7 +82,10 @@ int main(){
         //getting the state of game after value is assigned
         printingGameState(occupiedPositions);
 
+        if(occupiedPositions.size() == 9) break;
     }
+
+    
 
     //getting output
     cout<<"--------mapvalue--------"<<endl;
