@@ -3,6 +3,19 @@
 
 using namespace std;
 
+//before assigning check whether position exists or not
+bool availablePositions(int position){
+    const int arr[9] = {0, 1, 2, 11, 12, 13, 21, 22, 23};
+
+    for(int i=0; i<9; i++){
+        if(arr[i] == position) return true;
+    }
+
+    return false;
+}
+
+
+// assigns X/O to certain possition
 void assigningPositions(int &count, int currentPosition, map <int, char> &mpp){
 
     char value = 'X';
@@ -26,9 +39,13 @@ int main(){
         cout<<user<<" enter the position: ";
         cin>>position;
 
-        assigningPositions(count, position, occupiedPositions);
+        if(availablePositions(position)) assigningPositions(count, position, occupiedPositions);
+            
+        else cout<<"invalid input!!";
+        
     }
 
+    //getting output
     for(auto it: occupiedPositions){
         cout<<it.first<<"->"<<it.second<<endl;
     }
