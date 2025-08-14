@@ -5,7 +5,7 @@ using namespace std;
 
 //before assigning check whether position exists or not
 bool availablePositions(int position){
-    const int arr[9] = {0, 1, 2, 11, 12, 13, 21, 22, 23};
+    const int arr[9] = {0, 1, 2, 10, 11, 12, 20, 21, 22};
 
     for(int i=0; i<9; i++){
         if(arr[i] == position) return true;
@@ -41,7 +41,7 @@ void assigningPositions(int &count, int currentPosition, map <int, char> &mpp){
 //getting output after every new entry
 void printingGameState(map <int, char> occupiedPositions){
 
-    const int arr[9] = {0, 1, 2, 11, 12, 13, 21, 22, 23};
+    const int arr[9] = {0, 1, 2, 10, 11, 12, 20, 21, 22};
 
     for(int i=0; i<9; i++){
         if(occupiedPositions[arr[i]] != 0){
